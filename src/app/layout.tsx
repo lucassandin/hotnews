@@ -1,8 +1,9 @@
+"use client"
 import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import Providers from './providers'
+import ThemeSwitcher from './ThemeSwitcher'
 
-const inter = Inter({ subsets: ['latin'] })
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Hot News',
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <ThemeSwitcher />
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
