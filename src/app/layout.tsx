@@ -1,5 +1,7 @@
 "use client"
+import ThemeSwitcher from './ThemeSwitcher'
 import './globals.css'
+import Providers from './providers'
 
 export default function RootLayout({
   children,
@@ -8,8 +10,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className='dark:bg-dark-background'>
-        {children}
+      <body className='dark:bg-dark-background class'>
+        <Providers>
+          <ThemeSwitcher />
+          {children}
+        </Providers>
       </body>
     </html>
   )
