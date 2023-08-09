@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Header() {
   return (
-    <div className='flex justify-center h-24 bg-purple'>
+    <div className='flex justify-center h-24 bg-light-purple'>
       <Image
         priority={true}
         src="/logo.svg"

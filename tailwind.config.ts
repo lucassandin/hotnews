@@ -6,7 +6,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     container: {
       center: true,
@@ -14,13 +14,27 @@ const config: Config = {
     extend: {
     },
     colors: {
-      'purple': '#6324C6',
-      'grey': '#A7B0BE',
-      colors: {
-        'white': '#FFFFFF',
-        'gray-dark2': '#4C5667',
-        'black': '#000000'
-      }
+      light: {
+        'purple': '#6324C6',
+        'grey': '#A7B0BE',
+        'background': '#f5f5f5',
+        font: {
+          'white': '#FFFFFF',
+          'gray-dark2': '#4C5667',
+          'black': '#000000'
+        }
+      },
+      dark: {
+        'purple': '#6324C6',
+        'grey': '#A7B0BE',
+        'background': '#323232',
+        font: {
+          'white': '#FFFFFF',
+          'gray-dark2': '#4C5667',
+          'black': '#000000',
+          'purple': '#725fd5',
+        }
+      },
     },
   },
   plugins: [],
