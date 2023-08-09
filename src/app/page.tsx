@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Header />
       <Hotkeys />
-      
+
       <div className="container">
         {/* lista */}
         <div className="flex flex-row justify-start py-3 border-t-[1px] border-colors-gray-dark2 dark:bg-[#00bbff]">
@@ -19,9 +19,9 @@ export default function Home() {
             <p className="font-bold mt-2">dominio.io</p>
           </div>
         </div>
-        
+
         <button className='flex justify-center gap-2 items-center w-full rounded-lg bg-purple h-12 text-colors-white mt-2'>
-          <FaPlus size={16} /> 
+          <FaPlus size={16} />
           Ver mais
         </button>
       </div>
