@@ -8,6 +8,7 @@ export default function Home() {
     <>
       <Header />
       <Hotkeys />
+      
       <div className="container">
         {/* lista */}
         <div className="flex flex-row justify-start py-3 border-t-[1px] border-colors-gray-dark2">
