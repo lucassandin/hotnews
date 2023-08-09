@@ -1,15 +1,13 @@
 
 import { FaPlus } from 'react-icons/fa';
-import Header from './components/header/Header';
 import Hotkeys from './components/hotkeys/Hotkeys';
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <Hotkeys />
+      <div className="container mx-auto px-4">
+        <Hotkeys />
 
-      <div className="container">
         {/* lista */}
         <div className="flex flex-row justify-start py-3 border-t-[1px] border-light-grey">
           <div className="w-20 h-20 bg-light-grey rounded-lg mr-3"></div>
