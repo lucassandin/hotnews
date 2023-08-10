@@ -6,24 +6,26 @@ import { formatTimeAgo } from '../util/formatTimeAgo';
 
 interface PostsProviderProps {
   posts: PostProps[];
-  getPosts: () => void;
+  getPosts: (params?:SubredditProps) => void;
+  params: SubredditProps;
 }
 
 const PostsContext = createContext<PostsProviderProps>({} as PostsProviderProps);
 
 const defaultPosts: PostProps[] = [];
 const defaultParams: SubredditProps = {
-  q: 'new',
+  q: 'hot',
   limit: 10,
 }
 
 export function PostsProvider({ children }: { children: React.ReactNode}) {
   const [posts, setPosts] = useState<PostProps[]>(defaultPosts);
+  const [params, setParams] = useState<SubredditProps>(defaultParams);
   const URL_BASE = 'https://www.reddit.com/subreddits/search.json';
 
-  const getPosts = async (params: SubredditProps = defaultParams) => {
+  const getPosts = async (queryParams: SubredditProps = defaultParams) => {
     const now = new Date();
-    const response = await fetch(`${URL_BASE}?${toQueryParams(params)}`);
+    const response = await fetch(`${URL_BASE}?${toQueryParams(queryParams)}`);
     const data = await response.json();
 
     const results: PostProps[] = data.data.children.map((post: any): PostProps => {
@@ -42,6 +44,7 @@ export function PostsProvider({ children }: { children: React.ReactNode}) {
       };
     });
     
+    setParams(queryParams);
     setPosts(results);
   }
 
@@ -49,6 +52,7 @@ export function PostsProvider({ children }: { children: React.ReactNode}) {
     <PostsContext.Provider value={{
       posts,
       getPosts,
+      params
     }}>
       {children}
     </PostsContext.Provider>

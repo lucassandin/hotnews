@@ -6,7 +6,7 @@ export default function Post({ title, subtitle, user, domain, thumbnail }: PostP
       <div className="">
         <div className="w-20 h-20 bg-light-grey rounded-lg mr-3">
           {thumbnail !== "" && (
-            <img src={thumbnail} alt="thumbnail" className="w-20 h-20 object-cover rounded-lg" />
+            <img src={thumbnail} alt={title} className="w-20 h-20 object-cover rounded-lg" />
           )}
         </div>
       </div>
