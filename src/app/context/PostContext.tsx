@@ -2,7 +2,7 @@
 import { createContext, useContext, useState } from 'react';
 import { PostProps, SubredditProps } from '../interfaces/interfaces';
 import { toQueryParams } from '../util/toQueryParams';
-import { formatTimeAgo } from '../util/getTime';
+import { formatTimeAgo } from '../util/formatTimeAgo';
 
 interface PostsProviderProps {
   posts: PostProps[];
