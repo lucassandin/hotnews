@@ -1,13 +1,14 @@
 
 "use client"
 import { FaPlus } from 'react-icons/fa';
-import Posts from './components/Posts';
 import { usePosts } from './context/PostContext';
 import { SubredditProps } from './interfaces/interfaces';
 import { ButtonRoot } from './components/button';
+import { PostRoot } from './components/post';
+import { useEffect } from 'react';
 
 export default function Home() {
-  const { params, getPosts } = usePosts();
+  const { params, posts, getPosts } = usePosts();
 
   const handleGetPosts = (search: string, limit: number) => {
     const defaultParams: SubredditProps = {
@@ -17,6 +18,10 @@ export default function Home() {
     getPosts(defaultParams);
   }
 
+  useEffect(() => {
+    handleGetPosts(params.q, params.limit);
+  }, []);
+
   return (
     <div className="container mx-auto px-4">
       <ButtonRoot.buttons>
@@ -25,7 +30,7 @@ export default function Home() {
         <ButtonRoot.button onClick={() => handleGetPosts("rising", 10)} text="Rising" />
       </ButtonRoot.buttons>
 
-      <Posts />
+      <PostRoot.posts posts={posts} />
 
       <ButtonRoot.button 
         onClick={() => handleGetPosts(params.q, (params.limit + 10))} 

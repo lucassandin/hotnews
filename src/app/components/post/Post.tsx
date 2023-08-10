@@ -1,4 +1,4 @@
-import { PostProps } from "../interfaces/interfaces";
+import { PostProps } from "@/app/interfaces/interfaces";
 
 export default function Post({ title, subtitle, user, domain, thumbnail }: PostProps ) {
   return (

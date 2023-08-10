@@ -1,21 +1,16 @@
-"use client"
-import Post from "./Post";
-import { PostProps } from "../interfaces/interfaces";
-import { usePosts } from "../context/PostContext";
-import { useEffect } from "react";
+import { PostProps } from "@/app/interfaces/interfaces";
+import { PostRoot } from ".";
 
-export default function Posts() {
-  const { posts, getPosts } = usePosts();
+interface PostsProps {
+  posts: PostProps[];
+}
 
-  useEffect(() => {
-    getPosts();
-  }, []);
-
+export default function Posts({ posts }: PostsProps) {
   return (
     <>
       {posts && posts.map((post: PostProps) => {
         return (
-          <Post
+          <PostRoot.post
             key={post.user}
             title={post.title}
             subtitle={post.subtitle}
