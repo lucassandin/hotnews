@@ -39,7 +39,7 @@ export function PostsProvider({ children }: { children: React.ReactNode}) {
         title: post.data.title,
         user: post.data.display_name,
         subtitle,
-        domain: `https://www.reddit.com/r/${post.data.display_name}/`,
+        domain: post.data.display_name_prefixed,
         thumbnail: post.data.icon_img,
       };
     });
