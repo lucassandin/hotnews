@@ -5,18 +5,20 @@ import { usePosts } from './context/PostContext';
 import { SubredditProps } from './interfaces/interfaces';
 import { ButtonRoot } from './components/button';
 import { PostRoot } from './components/post';
-import { useEffect } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 
 export default function Home() {
   const { params, posts, getPosts } = usePosts();
 
-  const handleGetPosts = (search: string, limit: number) => {
+  const handleGetPosts = useCallback((search: string, limit: number) => {
     const defaultParams: SubredditProps = {
       limit,
       q: search,
-    }
+    };
     getPosts(defaultParams);
-  }
+  }, [getPosts]);
+
+  const memoizedPosts = useMemo(() => posts, [posts]);
 
   useEffect(() => {
     handleGetPosts(params.q, params.limit);
@@ -30,7 +32,7 @@ export default function Home() {
         <ButtonRoot.button onClick={() => handleGetPosts("rising", 10)} text="Rising" />
       </ButtonRoot.buttons>
 
-      <PostRoot.posts posts={posts} />
+      <PostRoot.posts posts={memoizedPosts} />
 
       <ButtonRoot.button 
         onClick={() => handleGetPosts(params.q, (params.limit + 10))} 

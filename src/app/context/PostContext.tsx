@@ -25,7 +25,13 @@ export function PostsProvider({ children }: { children: React.ReactNode}) {
 
   const getPosts = async (queryParams: SubredditProps = defaultParams) => {
     const now = new Date();
-    const response = await fetch(`${URL_BASE}?${toQueryParams(queryParams)}`);
+    const response = await fetch(`${URL_BASE}?${toQueryParams(queryParams)}`, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36',
+      },
+      cache: 'no-store',
+    });
+
     const data = await response.json();
 
     const results: PostProps[] = data.data.children.map((post: any): PostProps => {
@@ -61,7 +67,7 @@ export function PostsProvider({ children }: { children: React.ReactNode}) {
 
 export function usePosts() {
   const context = useContext(PostsContext);
-  if (!context) throw new Error('UsePosts must be used within a PostsContext');
+  if (!context) throw new Error('Error when using usePosts');
 
   return context;
 }
