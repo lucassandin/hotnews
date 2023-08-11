@@ -6,9 +6,10 @@ import { SubredditProps } from './interfaces/interfaces';
 import { ButtonRoot } from './components/button';
 import { PostRoot } from './components/post';
 import { useCallback, useEffect, useMemo } from 'react';
+import SkeletonLoading from './components/skeletonPosts/skeletonloading';
 
 export default function Home() {
-  const { params, posts, getPosts } = usePosts();
+  const { params, posts, getPosts, loading } = usePosts();
 
   const handleGetPosts = useCallback((search: string, limit: number) => {
     const defaultParams: SubredditProps = {
@@ -32,6 +33,7 @@ export default function Home() {
         <ButtonRoot.button onClick={() => handleGetPosts("rising", 10)} text="Rising" />
       </ButtonRoot.buttons>
 
+      <SkeletonLoading loading={loading} />
       <PostRoot.posts posts={memoizedPosts} />
 
       <ButtonRoot.button 
