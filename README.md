@@ -37,7 +37,7 @@ Este projeto utiliza o Cypress para testes de integração E2E. Para executar os
 npm run cypress:open
 ```
 
-- Selecione teste de componentes ou E2E para inicar os teste.
+- Selecione teste de componentes ou E2E para inicar os testes.
 
 ## Projeto Publicado no Vercel
 
