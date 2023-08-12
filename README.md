@@ -44,3 +44,7 @@ npm run cypress:open
 O projeto está publicado no Vercel e pode ser acessado pelo seguinte link: https://hotnews-two.vercel.app/.
 
 Este projeto é uma demonstração de um aplicativo web que exibe posts do Reddit e inclui testes de integração usando o Cypress. Sinta-se à vontade para explorar o código-fonte, testar o aplicativo e verificar os testes de integração. Se você deseja fazer modificações ou adicionar recursos, lembre-se de executar os passos necessários para testar e executar o projeto em seu ambiente local.
+
+## Licença
+
+Este projeto é liberado sob a licença Unlicense. Para mais informações, consulte o arquivo LICENSE.
