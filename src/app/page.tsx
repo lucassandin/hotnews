@@ -4,7 +4,7 @@ import { FaPlus } from 'react-icons/fa';
 import { usePosts } from './context/PostContext';
 import { ButtonRoot } from './components/button';
 import { PostRoot } from './components/post';
-import SkeletonLoading from './components/skeletonPosts/SkeletonLoading';
+import SkeletonLoading from './components/skeletonPosts';
 import { useFetchPosts } from './hook/useFetchPosts';
 
 const Home = () => {
