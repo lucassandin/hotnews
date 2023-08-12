@@ -1,4 +1,5 @@
 "use client"
+
 export default function Error({ error, reset }: any) {
   return (
     <div className="container mx-auto px-4 w-96 mt-6">
