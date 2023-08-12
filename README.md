@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HotNews
 
-## Getting Started
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-First, run the development server:
+Este é um projeto de aplicativo web desenvolvido com Next.js e React que permite aos usuários visualizar posts do Reddit em diferentes categorias. O projeto também inclui testes de integração usando o framework de testes E2E Cypress.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Executando o Projeto em Ambiente de Desenvolvimento
+
+Para executar o projeto em um ambiente de desenvolvimento, siga os passos abaixo:
+
+- Certifique-se de que você tenha o Node.js instalado em sua máquina.
+- Clone este repositório para o seu ambiente local.
+- No diretório do projeto, execute o seguinte comando para instalar as dependências:
+
+```sh
+npm install
+ou
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Inicie o servidor de desenvolvimento com o seguinte comando:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- O projeto estará disponível no navegador em http://localhost:3000.
 
-## Learn More
+## Testando com Cypress
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto utiliza o Cypress para testes de integração E2E. Para executar os testes, siga os passos abaixo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Certifique-se de que você tenha seguido os passos acima para instalar as dependências.
+- Execute o seguinte comando para abrir a interface do Cypress:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```sh
+npm run cypress:open
+```
 
-## Deploy on Vercel
+- Selecione o arquivo de teste E2E localizado na pasta cypress/integration.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Projeto Publicado no Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+O projeto está publicado no Vercel e pode ser acessado pelo seguinte link: https://hotnews-two.vercel.app/.
+
+Este projeto é uma demonstração de um aplicativo web que exibe posts do Reddit e inclui testes de integração usando o Cypress. Sinta-se à vontade para explorar o código-fonte, testar o aplicativo e verificar os testes de integração. Se você deseja fazer modificações ou adicionar recursos, lembre-se de executar os passos necessários para testar e executar o projeto em seu ambiente local.

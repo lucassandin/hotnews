@@ -32,6 +32,7 @@ const Home = () => {
         text='Ver mais' 
         icon={FaPlus} 
         className='flex justify-center gap-2 items-center w-full rounded-lg bg-light-purple h-12 text-light-font-white mt-2'
+        data-cy-ver-mais="ver-mais-cy"
       />
     </div>
   )

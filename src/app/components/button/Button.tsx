@@ -2,12 +2,11 @@ import { ButtonHTMLAttributes, ElementType } from "react";
 import { twMerge } from 'tailwind-merge'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  handleGetPosts?: (q: string, limit: number) => void;
   text?: string;
   icon?: ElementType;
 }
 
-export default function Button({ handleGetPosts, text, icon: Icon, ...rest }: ButtonProps) {
+export default function Button({ text, icon: Icon, ...rest }: ButtonProps) {
   return (
     <button 
       {...rest} 

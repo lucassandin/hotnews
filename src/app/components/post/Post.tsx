@@ -2,7 +2,10 @@ import { PostProps } from "@/app/interfaces/interfaces";
 
 export default function Post({ title, subtitle, user, domain, thumbnail }: PostProps ) {
   return (
-    <div className="flex flex-row xs-flex-wrap justify-start py-3 border-t-[1px] border-light-grey">
+    <div 
+      className="flex flex-row xs-flex-wrap justify-start py-3 border-t-[1px] border-light-grey"
+      data-cy-post="post-cy"
+    >
       <div className="">
         <div className="w-20 h-20 bg-light-grey rounded-lg mr-3">
           {thumbnail !== "" && (
