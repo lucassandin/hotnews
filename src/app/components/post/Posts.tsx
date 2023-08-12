@@ -2,7 +2,7 @@ import { PostProps } from "@/app/interfaces/interfaces";
 import { PostRoot } from ".";
 
 interface PostsProps {
-  posts: PostProps[];
+  posts: PostProps[] | undefined;
 }
 
 export default function Posts({ posts }: PostsProps) {
