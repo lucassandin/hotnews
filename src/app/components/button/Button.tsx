@@ -10,7 +10,7 @@ export default function Button({ text, icon: Icon, ...rest }: ButtonProps) {
   return (
     <button 
       {...rest} 
-      className={twMerge('rounded-lg bg-light-grey focus:bg-light-purple w-52 h-12 text-light-font-white', rest.className)}>
+      className={twMerge('rounded-lg bg-light-grey focus:bg-light-purple active:bg-light-purple w-52 h-12 text-light-font-white', rest.className)}>
       {Icon && <Icon size={16} />}
       {text}
     </button>
